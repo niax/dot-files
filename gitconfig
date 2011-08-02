@@ -3,3 +3,5 @@
 	email = niax@niax.co.uk
 [diff]
 	tool = vimdiff
+[color]
+	ui = always
