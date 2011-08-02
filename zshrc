@@ -31,4 +31,6 @@ alias vi=vim
 export EDITOR=vim
 
 # Keychain
-eval `keychain --eval -Q -q --nogui --agents ssh id_rsa`
+if [ -e $HOME/.ssh/id_rsa ]; then
+    eval `keychain --eval -Q -q --nogui --agents ssh id_rsa`
+fi
