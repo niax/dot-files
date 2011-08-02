@@ -11,7 +11,7 @@ ZSH_THEME="jonathan"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -21,7 +21,7 @@ ZSH_THEME="jonathan"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow extract)
+plugins=(git git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,4 +31,4 @@ alias vi=vim
 export EDITOR=vim
 
 # Keychain
-eval `keychain --eval --agents ssh id_rsa`
+eval `keychain --eval -Q -q --nogui --agents ssh id_rsa`
