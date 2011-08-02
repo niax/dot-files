@@ -32,12 +32,16 @@ au FileType python setlocal smarttab
 au FileType python :source ~/.vim/python_fold.vim
 au FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
+" Javascript
+
 au FileType javascript setlocal tabstop=4|setlocal shiftwidth=4|setlocal softtabstop=4
 au FileType javascript setlocal expandtab 
 au FileType javascript setlocal smarttab 
 
+" Perl
 
-let perl_fold=1
+au FileType perl let perl_fold=1
+
 set foldmethod=syntax
 
 set number
