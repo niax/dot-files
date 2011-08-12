@@ -30,6 +30,9 @@ source $ZSH/oh-my-zsh.sh
 alias vi=vim
 export EDITOR=vim
 
+# Don't allow virtualenv to set PS1
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # Keychain
 if [ -e $HOME/.ssh/id_rsa ]; then
     eval `keychain --eval -Q -q --nogui --agents ssh id_rsa`
