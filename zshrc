@@ -25,6 +25,10 @@ plugins=(git git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
+if [ -e $HOME/.zshrc-local ]; then
+	source $HOME/.zshrc-local
+fi
+
 # Customize to your needs...
 
 alias vi=vim

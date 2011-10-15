@@ -8,8 +8,8 @@ if has("autocmd")
  filetype indent on
 endif "has("autocmd")
 
-set backupdir=~/vim-backups
-set dir=~/vim-swap
+set backupdir=~/.vim-backups
+set dir=~/.vim-swap
 set backspace=indent,eol,start "Backspace indent, over line breaks and outside of insert
 
 " Default stops
@@ -42,11 +42,24 @@ au FileType javascript setlocal smarttab
 
 au FileType perl let perl_fold=1
 
+" TeX
+au FileType tex setlocal spell
+au FileType tex setlocal spl=en_gb
+
 set foldmethod=syntax
 
 set number
 syntax enable
 set background=dark
+set t_Co=256
+" ------------------------------------------------------------------
+" Solarized Colorscheme Config
+" ------------------------------------------------------------------
+let g:solarized_termtrans=1    "default value is 0
+let g:solarized_termcolors=256    "default value is 16
+let g:solarized_contrast="high"    "default value is normal
+let g:solarized_visibility="high"    "default value is normal
+let g:solarized_hitrail=1    "default value is 0
 let g:solarized_termcolors=256
 let g:solarized_bold=0
 let g:solarized_termtrans=1
