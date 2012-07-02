@@ -4,6 +4,3 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule ".git-parts/Tomorrow-Theme"]
-	path = .git-parts/Tomorrow-Theme
-	url = https://github.com/ChrisKempson/Tomorrow-Theme.git
