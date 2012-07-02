@@ -82,13 +82,10 @@ set t_Co=256
 " ------------------------------------------------------------------
 " Solarized Colorscheme Config
 " ------------------------------------------------------------------
-let g:solarized_termtrans=1    "default value is 0
-let g:solarized_termcolors=256    "default value is 16
+let g:solarized_termtrans=0    "default value is 0
+let g:solarized_termcolors=256   "default value is 16
 let g:solarized_contrast="high"    "default value is normal
 let g:solarized_visibility="high"    "default value is normal
-let g:solarized_hitrail=1    "default value is 0
-let g:solarized_termcolors=256
-let g:solarized_bold=0
-let g:solarized_termtrans=1
+let g:solarized_hitrail=0    "default value is 0
 colorscheme solarized
 "colorscheme vibrantink
