@@ -23,6 +23,8 @@ set ruler "Always show status bar
 set laststatus=2 " (also) always show the status bar
 set history=1000
 
+set mouse=a
+
 " File specifics
 " Python
 
