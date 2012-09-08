@@ -69,6 +69,9 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au FileType cpp au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 au FileTYpe cpp setlocal completeopt=menuone,menu,longest,preview
 
+let g:ctrlp_map = "<c-p>"
+let g:ctrlp_cmd = "CtrlP"
+
 set foldmethod=syntax
 
 if has('gui_running')
