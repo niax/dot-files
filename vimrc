@@ -23,6 +23,8 @@ set ruler "Always show status bar
 set laststatus=2 " (also) always show the status bar
 set history=1000
 
+set mouse=a
+
 " File specifics
 " Python
 
@@ -66,6 +68,9 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 au FileType cpp au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 au FileTYpe cpp setlocal completeopt=menuone,menu,longest,preview
+
+let g:ctrlp_map = "<c-p>"
+let g:ctrlp_cmd = "CtrlP"
 
 set foldmethod=syntax
 
