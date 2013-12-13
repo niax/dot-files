@@ -73,9 +73,6 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au FileType cpp au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 au FileTYpe cpp setlocal completeopt=menuone,menu,longest,preview
 
-let g:ctrlp_map = "<c-p>"
-let g:ctrlp_cmd = "CtrlP"
-
 set foldmethod=syntax
 
 if has('gui_running')
@@ -120,6 +117,8 @@ nnoremap <space>p :<C-u>Unite -buffer-name=files -start-insert buffer file_rec/a
 nnoremap <space>/ :Unite grep:.<cr>
 " Buffer switching
 nnoremap <space>b :Unite -quick-match buffer<cr>
+" Outline
+nnoremap <space>o :Unite -quick-match outline<cr>
 
 
 autocmd FileType unite call s:unite_settings()
@@ -142,3 +141,10 @@ function! s:unite_settings()
 	imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
 endfunction
 
+" Fancy vimux
+function! s:build_package()
+	call VimuxRunCommand("git buildpackage --git-ignore-new")
+endfunction
+
+command Buildpackage call s:build_package()
+nnoremap <Leader>bp :Buildpackage<cr>
