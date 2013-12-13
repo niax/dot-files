@@ -46,6 +46,7 @@ au FileType javascript setlocal smarttab
 " Perl
 
 au FileType perl let perl_fold=1
+au FileType perl let perl_include_pod=1
 
 " GLSL
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setlocal filetype=glsl
@@ -95,3 +96,49 @@ let g:solarized_visibility="high"    "default value is normal
 let g:solarized_hitrail=0    "default value is 0
 colorscheme solarized
 "colorscheme vibrantink
+
+" Unite
+let g:unite_enable_start_insert = 1
+let g:unite_split_rule = "botright"
+let g:unite_force_overwrite_statusline = 0
+let g:unite_winheight = 10
+" For ack
+let g:unite_source_grep_command = 'ack'
+let g:unite_source_grep_default_opts = '--no-heading --no-color -a -H'
+
+call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+	\ 'ignore_pattern', join([
+	\ '.git'
+	\ ], '\|'))
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+
+" Ctrl-P replacement
+nnoremap <C-p> :<C-u>Unite -buffer-name=files -start-insert buffer file_rec/async:!<cr>
+nnoremap <space>p :<C-u>Unite -buffer-name=files -start-insert buffer file_rec/async:!<cr>
+" Grep the things (no more Ack-Vim)
+nnoremap <space>/ :Unite grep:.<cr>
+" Buffer switching
+nnoremap <space>b :Unite -quick-match buffer<cr>
+
+
+autocmd FileType unite call s:unite_settings()
+
+function! s:unite_settings()
+	" Exit unite
+	imap <buffer> <C-c> <Plug>(unite_exit)
+	nmap <buffer> <C-c> <Plug>(unite_exit)
+	nmap <buffer> <Esc> <Plug>(unite_exit)
+
+	" Movement
+	imap <buffer> <C-j>	<Plug>(unite_select_next_line)
+	imap <buffer> <C-k>	<Plug>(unite_select_previous_line)
+	imap <buffer> <PageUp> <Plug>(unite_select_previous_page)
+	imap <buffer> <PageDown> <Plug>(unite_select_next_page)
+
+	" Opening
+	imap <silent><buffer><expr> <C-x> unite#do_action('split')
+	imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+	imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
+endfunction
+
