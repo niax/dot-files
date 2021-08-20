@@ -31,3 +31,6 @@ eval "$(starship init zsh)"
 alias vim=nvim
 alias vi=nvim
 export EDITOR=nvim
+
+alias gc="git commit -v"
+alias gca="git commit -av"
