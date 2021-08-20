@@ -1,3 +1,7 @@
+if [ -e "$HOME/.zshrc-local-early" ]; then
+	source "$HOME/.zshrc-local-early"
+fi
+
 export PATH="$HOME/local/bin:$PATH"
 
 ## History file configuration
@@ -20,11 +24,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-## SerenityOS build things
-
-export SERENITY_QEMU_BIN='/mnt/c/Program Files/qemu/qemu-system-x86_64.exe'
-export SERENITY_VIRT_TECH_ARG="-accel whpx,kernel-irqchip=off"
-
 ## Prompt
 eval "$(starship init zsh)"
 
@@ -34,3 +33,7 @@ export EDITOR=nvim
 
 alias gc="git commit -v"
 alias gca="git commit -av"
+
+if [ -e "$HOME/.zshrc-local" ]; then
+	source "$HOME/.zshrc-local"
+fi

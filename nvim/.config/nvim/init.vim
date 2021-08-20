@@ -109,6 +109,14 @@ imap <s-tab> <Plug>(completion_smart_s_tab)
 " Git commit messages
 autocmd FileType gitcommit setlocal spell
 
+" C
+au FileType c setlocal tabstop=2|setlocal shiftwidth=2|setlocal softtabstop=2
+au FileType c setlocal expandtab
+au FileType c setlocal smarttab
+au FileType cpp setlocal tabstop=2|setlocal shiftwidth=2|setlocal softtabstop=2
+au FileType cpp setlocal expandtab
+au FileType cpp setlocal smarttab
+
 " Python
 autocmd FileType python setlocal tabstop=4|setlocal shiftwidth=4|setlocal softtabstop=4
 autocmd FileType python setlocal expandtab 
