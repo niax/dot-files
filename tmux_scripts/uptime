@@ -1,3 +1,0 @@
-#!/usr/local/bin/zsh
-
-uptime | sed -E 's/.* up ([0-9]+ days)?.*([0-9]+ users?).*load averages: (.+).*/\1 \2 \3/'

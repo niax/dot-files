@@ -1,0 +1,53 @@
+format = """
+[┌─\\(](cyan)\
+$username\
+$hostname\
+$shlvl\
+[\\)─\\(](cyan)\
+$directory\
+[\\)](cyan)\
+$jobs\
+$status
+[└─\\(](cyan)\
+$time\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+[\\)──](cyan)\
+$character"""
+
+[username]
+show_always = true
+format = "[$user]($style)@"
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style)"
+read_only = ""
+truncate_to_repo = false
+truncation_length = 5
+truncation_symbol = "…/"
+
+[jobs]
+disabled = false
+format = "[─\\(](cyan)[$symbol$number]($style)[\\)](cyan)"
+
+[status]
+disabled = false
+format = "[─\\(](cyan)[$symbol$status]($style)[\\)](cyan)"
+
+[time]
+disabled = false
+format = "[$time]($style)"
+
+[git_branch]
+format = " on [$symbol$branch]($style)"
+symbol = ""
+
+[git_commit]
+format = "[@$hash]($style)"
